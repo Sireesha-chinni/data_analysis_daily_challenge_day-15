@@ -118,9 +118,7 @@ select * from students
 order by join_year desc;
 
 -- 14. Find total number of students.
-select sum(marks) as total_marks from students s
-join marks m
-on s.student_id = m.student_id;
+select count(*) as total_students from students;
 
 
 -- 15. Find average marks.
@@ -142,7 +140,4 @@ on s.student_id = m.student_id;
 
 
 -- 18. Find total marks scored by all students.
-select s.student_name as student_name,sum(m.marks) as total_marks from students s
-join marks m
-on s.student_id = m.student_id
-group by s.student_name;
+select sum(marks) as total_marks from marks;
